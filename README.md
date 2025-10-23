@@ -1,6 +1,3 @@
-# Iris-knn-naive-prediction
-Flask-based web app for Iris Flower prediction using KNN.
-
 # Iris Flower Prediction Web App
 
 ## Overview
@@ -36,6 +33,7 @@ This is a **Flask-based web application** that predicts the species of an Iris f
 
 bash
 Copy code
+
 python -m venv knn_env
 
 ## Activate the virtual environment:
@@ -58,7 +56,7 @@ python app.py
 
 cpp
 Copy code
-[http://127.0.0.1:5000/predict]
+http://127.0.0.1:5000
 
 
 
