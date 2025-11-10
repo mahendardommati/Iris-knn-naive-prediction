@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Flower Prediction</title>
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input, select, button {
+            margin: 8px 0;
+            padding: 8px;
+            width: 90%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            width: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .result {
+            font-weight: bold;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Iris_dataset_scatterplot.svg" alt="Iris Logo">
+        <h2>Iris Flower Prediction</h2>
+
+        <form action="/predict" method="post">
+            <input type="text" name="sepal_length" placeholder="Sepal Length" required>
+            <input type="text" name="sepal_width" placeholder="Sepal Width" required>
+            <input type="text" name="petal_length" placeholder="Petal Length" required>
+            <input type="text" name="petal_width" placeholder="Petal Width" required>
+
+            <select name="model">
+                <option value="KNN">KNN</option>
+                <option value="Naive">Naive Bayes</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
